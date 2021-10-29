@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Imper Websocket Foda</title>
 </head>
+
 <body>
    <div id="msg"></div>
 
@@ -12,13 +14,13 @@
    <button onclick="sendMsg">Falar</button>
 </body>
 <script>
-   var conn = new WebSocket('wss://sua_url_da_heroku.herokuapp.com/wss');
-   conn.onopen = function(e) {
+   var conn = new WebSocket('wss://ws-rpgg.herokuapp.com/wss');
+   conn.onopen = function (e) {
       console.log("Connection established!");
       conn.send("Olá websocekt!");
    };
 
-   conn.onmessage = function(e) {
+   conn.onmessage = function (e) {
       var msg = document.getElementById('msg');
       msg.innerHTML = msg.innerHTML + e.data + "<br>";
    };
@@ -29,4 +31,5 @@
    }
 
 </script>
+
 </html>
