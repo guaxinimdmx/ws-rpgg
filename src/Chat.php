@@ -29,7 +29,9 @@ class Chat implements MessageComponentInterface
         echo "Connection {$from->resourceId} sending message {$msg} to {$numRecv} connection";
 
         foreach ($this->clients as $client) {
+            // if ($from !== $client) {
             $client->send($msg);
+            //}
         }
     }
 
